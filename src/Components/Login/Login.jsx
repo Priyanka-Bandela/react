@@ -8,7 +8,6 @@ function Login() {
   let navigate = useNavigate();
 
   const handleChange = (e) => {
-    // console.log(e.target);
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
@@ -21,11 +20,7 @@ function Login() {
     } else {
       setFormErrors(formErr);
       navigate("/home");
-
-      console.log("formValues", formValues);
     }
-
-    // console.log(formValues);
   };
 
   const validate = (values) => {
@@ -55,6 +50,7 @@ function Login() {
         />
       </div>
       <p style={{ color: "red" }}>{formErrors.email}</p>
+
       <div className="form-group">
         <label>Password</label>
         <input
@@ -67,6 +63,7 @@ function Login() {
         />
       </div>
       <p style={{ color: "red" }}>{formErrors.password}</p>
+
       <button type="button" className="btn btn-primary" onClick={handleSubmit}>
         Submit
       </button>

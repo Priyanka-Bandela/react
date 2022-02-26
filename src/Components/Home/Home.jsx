@@ -15,8 +15,6 @@ function Home() {
       setData(jsonData.data);
 
       setOriginalData(jsonData.data);
-
-      // console.log(jsonData);
     }
   };
 
@@ -36,11 +34,9 @@ function Home() {
     if (e.target.checked) {
       deleteTemp.push(id);
     } else {
-      debugger;
       deleteTemp.splice(deleteTemp.indexOf(id), 1);
     }
 
-    console.log("deleteTemp", deleteTemp);
     setDeleteData(deleteTemp);
   };
 
@@ -48,7 +44,12 @@ function Home() {
     let dataT = data.filter((d) => !deleteData.includes(d.id));
 
     setData(dataT);
+    setOriginalData(dataT);
     setDeleteData([]);
+  };
+
+  const viewData = () => {
+    setData(originalData);
   };
 
   return (
@@ -82,7 +83,11 @@ function Home() {
         >
           Save
         </button>
-        <button type="button" className="btn btn-primary mr-auto">
+        <button
+          type="button"
+          onClick={viewData}
+          className="btn btn-primary mr-auto"
+        >
           View
         </button>
       </div>
