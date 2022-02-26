@@ -22,7 +22,6 @@ function Home() {
       if (r.id == id) {
         r = { ...r, [field]: value };
       }
-
       return r;
     });
     setData(tempData);
@@ -35,7 +34,6 @@ function Home() {
     } else {
       deleteTemp.splice(deleteTemp.indexOf(id), 1);
     }
-
     setDeleteData(deleteTemp);
   };
 
@@ -45,7 +43,6 @@ function Home() {
     setData(dataT);
     setOriginalData(dataT);
     setDeleteData([]);
-    // setData(originalData);
     setOriginalData(data);
   };
 
