@@ -13,7 +13,6 @@ function Home() {
       const jsonData = require("./../../Data/sample.json");
 
       setData(jsonData.data);
-
       setOriginalData(jsonData.data);
     }
   };
@@ -46,6 +45,8 @@ function Home() {
     setData(dataT);
     setOriginalData(dataT);
     setDeleteData([]);
+    // setData(originalData);
+    setOriginalData(data);
   };
 
   const viewData = () => {
